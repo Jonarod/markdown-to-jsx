@@ -5,7 +5,7 @@ const releaseConfig = Object.assign({}, config);
 
 releaseConfig.devtool = 'none';
 releaseConfig.plugins.push(
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.debug.ProfilingPlugin(),
 );
 
 export default releaseConfig;

@@ -52,10 +52,13 @@
     "react-dom": "^15.6.1",
     "size-limit": "^0.13.1",
     "uglify-js": "^2.7.3",
-    "webpack": "^3.4.1",
+    "webpack": "^4.0.0-beta.0",
+    "webpack-cli": "^2.0.4",
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "clinic": "^0.6.2",
+    "global": "^4.3.2",
     "prop-types": "^15.5.10",
     "unquote": "^1.1.0"
   },
@@ -73,7 +76,7 @@
     "prepublish": "in-publish && npm run build && npm run release || not-in-publish",
     "lint": "eslint index.js index.spec.js site.js",
     "build": "babel index.js --out-file index.cjs.js --source-maps && BABEL_ENV=esm babel index.js --out-file index.esm.js --source-maps",
-    "release": "webpack --config ./webpack.config.prod.babel.js -p --display-optimization-bailout",
+    "release": "node --inspect node_modules/.bin/webpack --config ./webpack.config.prod.babel.js -p --display-optimization-bailout",
     "release:debug": "webpack --config ./webpack.config.babel.js --display-optimization-bailout",
     "start": "webpack-dev-server --hot --inline --open",
     "test": "jest --verbose",
