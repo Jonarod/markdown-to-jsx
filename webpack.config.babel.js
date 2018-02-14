@@ -5,8 +5,8 @@ export default {
         compress: true,
         contentBase: path.resolve(__dirname, 'docs'),
     },
-    devtool: 'inline-source-map',
     entry: path.resolve(__dirname, 'site.js'),
+    mode: 'development',
     module: {
         rules: [{
             exclude: /(node_modules)/,
